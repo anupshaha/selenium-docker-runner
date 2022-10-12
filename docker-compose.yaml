@@ -9,6 +9,8 @@ services:
       - hub
     environment:
       - SE_EVENT_BUS_HOST=hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
   firefox:
     image: selenium/node-firefox:4.1.4
     shm_size: '2g'
@@ -16,6 +18,8 @@ services:
       - hub
     environment:
       - SE_EVENT_BUS_HOST=hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
   search-module:
     image: anupshaha/selenium-docker
     depends_on:
